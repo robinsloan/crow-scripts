@@ -20,7 +20,12 @@ File.open("prelude.mid", "rb") do | file |
 
       track.events.each.with_index do |event, index|
         if event.is_a? MIDI::NoteOn then
-          lua_string += midi_to_cv(event.note) + ", "
+          lua_string += midi_to_cv(event.note)
+          if (index % 16 == 0)
+            lua_string += ",\n"
+          else
+            lua_string += ", "
+          end
         end
       end
 
