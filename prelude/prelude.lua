@@ -48,5 +48,5 @@ input[1].change = function(state)
     noteIndex = 1
   end
 
-  output[1].volts = notes[noteIndex] - 2.0
+  output[1].volts = notes[noteIndex] - 3.0
 end
